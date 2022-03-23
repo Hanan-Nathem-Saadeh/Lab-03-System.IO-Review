@@ -316,7 +316,7 @@ namespace Lab_03_System.IO
             return sentence;
         }
 
-        public static void NumberOfCharacters(string sentence)
+        public static string[] NumberOfCharacters(string sentence)
         {
 
             string[] WordSentence = sentence.Split(" ");
@@ -327,9 +327,9 @@ namespace Lab_03_System.IO
                 Console.Write(ArrString[i]);
             }
             Console.WriteLine();
-
+            return ArrString;
         }
-
+        
 
 
     }
