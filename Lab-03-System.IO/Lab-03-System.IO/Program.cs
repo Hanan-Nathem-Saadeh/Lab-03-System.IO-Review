@@ -8,31 +8,31 @@ namespace Lab_03_System.IO
         {
             try
             {
-                Console.WriteLine("**************************************************");
-                Console.WriteLine("*********** Welcom To Lab-03-System I/O **********");
-                Console.WriteLine("**************************************************");
+                //Console.WriteLine("**************************************************");
+                //Console.WriteLine("*********** Welcom To Lab-03-System I/O **********");
+                //Console.WriteLine("**************************************************");
 
-                string SNumbers = GetArrForChallenge1();
-                Console.WriteLine("The product of the First 3 numbers is: " + MultiplyNumbers(SNumbers));
-                Console.WriteLine("*************************************************************");
+                //string SNumbers = GetArrForChallenge1();
+                //Console.WriteLine("The product of the First 3 numbers is: " + MultiplyNumbers(SNumbers));
+                //Console.WriteLine("*************************************************************");
 
-                int[] ArrForChallenge2 = GetArrForChallenge2();
-                Console.WriteLine("The average of these numbers is: " + GetAverage(ArrForChallenge2));
-                Console.WriteLine("*************************************************************");
+                //int[] ArrForChallenge2 = GetArrForChallenge2();
+                //Console.WriteLine("The average of these numbers is: " + GetAverage(ArrForChallenge2));
+                //Console.WriteLine("*************************************************************");
 
-                PrintStars();
-                Console.WriteLine();
-                Console.WriteLine("*************************************************************");
+                //PrintStars();
+                //Console.WriteLine();
+                //Console.WriteLine("*************************************************************");
 
 
-                int[] IntegerArray = GetArrForChallenge4();
-                Console.WriteLine("The number that appears most times is : " + RepeatedNumber(IntegerArray));
-                Console.WriteLine("*************************************************************");
+                //int[] IntegerArray = GetArrForChallenge4();
+                //Console.WriteLine("The number that appears most times is : " + RepeatedNumber(IntegerArray));
+                //Console.WriteLine("*************************************************************");
 
-                int[] IntegerArray1 = GetArrForChallenge5();
+                //int[] IntegerArray1 = GetArrForChallenge5();
 
-                Console.WriteLine("The maximum value in the array is : " + FindMaximumValue(IntegerArray1));
-                Console.WriteLine("*************************************************************");
+                //Console.WriteLine("The maximum value in the array is : " + FindMaximumValue(IntegerArray1));
+                //Console.WriteLine("*************************************************************");
 
                 InputWord();
                 Console.WriteLine("*************************************************************");
@@ -267,16 +267,14 @@ namespace Lab_03_System.IO
 
         public static void InputWord()
         {
+            Console.WriteLine("this is challenge 6 ");
+
             Console.WriteLine("Kindly .... Insert a word to save it in a file : ");
             string word = Console.ReadLine();
             string path = "words.txt";
-
-            {
-                if (File.Exists(path))
-                {
-                    File.AppendAllText(path, word + Environment.NewLine);
-                }
-            }
+            File.AppendAllText(path, word + Environment.NewLine);
+                
+            
         }
 
 
@@ -285,11 +283,14 @@ namespace Lab_03_System.IO
     //Challenge7
     public static void ReadWord()
         {
+            
             string path = "words.txt";
-            String[] fileContent = File.ReadAllLines(path);
-            for (int i = 0; i < fileContent.Length; i++)
-            { Console.WriteLine(fileContent[i]); }
+            string fileContent = File.ReadAllText(path);
+            Console.WriteLine("this is challenge 7 ");
+            Console.WriteLine("this is the contant of the text file after adding in challenge 6 ");
 
+
+            Console.WriteLine(fileContent);
         }
         //Challenge8
         public static void RemoveWord()
@@ -297,10 +298,10 @@ namespace Lab_03_System.IO
 
             string path = "words.txt";
             string Contant = File.ReadAllText(path);
-
-
             string Word = Contant.Substring(0, Contant.IndexOf(" "));
             string newText = Contant.Remove(0, Word.Length + 1);
+            Console.WriteLine("this is challenge 8 ");
+
             Console.WriteLine("The contant after deleting the first word : \n" + newText);
             //write the contant after delete
             File.WriteAllText(path, newText);
@@ -311,6 +312,8 @@ namespace Lab_03_System.IO
         //Challenge9
         public static string InsertSentence()
         {
+            Console.WriteLine("this is challenge 9 ");
+
             Console.WriteLine("Kindly...Insert a sentence ");
             string sentence = Console.ReadLine();
             return sentence;
